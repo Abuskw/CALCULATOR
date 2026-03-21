@@ -1,150 +1,95 @@
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
 body {
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    font-family: Arial;
+    background: #121212;
+    color: white;
 }
 
-.app {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Header */
+.app-header {
+    text-align: center;
+    padding: 20px;
 }
 
-.calculator {
-  background: #0b0b0b;
-  border-radius: 30px;
-  padding: 20px;
-  width: min(90vw, 320px);
-  box-shadow: 0 0 50px rgba(0, 255, 255, 0.15);
+.logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.display input {
-  width: 100%;
-  height: clamp(50px, 10vw, 70px);
-  background: #000;
-  border: none;
-  color: #fff;
-  font-size: clamp(1.5rem, 6vw, 2.4rem);
-  text-align: right;
-  padding: clamp(5px, 2vw, 10px);
-  border-radius: 15px;
-  margin-bottom: 15px;
-  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.2);
+.logo-icon {
+    width: 10px;
+    height: 10px;
+    background: #4CAF50;
+    border-radius: 50%;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+.tagline {
+    font-size: 12px;
+    color: gray;
 }
 
+/* Card */
+.card {
+    background: #1E1E1E;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* Input */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Buttons */
 button {
-  height: clamp(50px, 8vw, 60px);
-  border: none;
-  border-radius: 50%;
-  font-size: clamp(1rem, 4vw, 1.2rem);
-  background: #1a1a1a;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.15s ease;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
 }
 
-/* AMOLED glow on press */
-button:active {
-  transform: scale(0.94);
-  box-shadow: 0 0 15px rgba(0, 242, 255, 0.7);
+/* Tabs */
+.tabs {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #1E1E1E;
 }
 
-.operator {
-  background: #002c2c;
-  color: #00f2ff;
+.tabButton {
+    background: none;
+    border: none;
+    color: gray;
 }
 
-.equals {
-  background: #00f2ff;
-  color: #000;
-  grid-row: span 2;
-  border-radius: 30px;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+.tabButton.active {
+    color: #4CAF50;
 }
 
-.zero {
-  grid-column: span 2;
-  border-radius: 30px;
+/* Tabs Content */
+.tabContent {
+    display: none;
 }
 
-/* History Panel */
-.history {
-  background: #0b0b0b;
-  color: #fff;
-  width: min(45vw, 200px);
-  border-radius: 25px;
-  padding: 15px;
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.12);
-  overflow-y: auto;
-  max-height: 80vh;
+.tabContent.active {
+    display: block;
 }
 
-.history h3 {
-  margin: 0 0 10px;
-  text-align: center;
-  color: #00f2ff;
-}
-.history ul {
-
-  list-style: none;
-
-  padding: 0;
-
-  margin: 0;
-
-  max-height: 0;          /* collapsed */
-
-  overflow-y: hidden;
-
-  transition: max-height 0.3s ease;
-
-}
-
-.history.show ul {
-
-  max-height: 80vh;       /* expand when shown */
-
-}
-.history h3 button {
-
-  margin-left: 5px;
-
-  background: #002c2c;
-
-  color: #00f2ff;
-
-  border: none;
-
-  border-radius: 5px;
-
-  padding: 2px 6px;
-
-  cursor: pointer;
-
-  font-size: 0.8rem;
-
-}
-
-.history h3 button:hover {
-
-  background: #00f2ff;
-
-  color: #000;
-
+/* NFT */
+.nftGallery {
+    display: flex;
+    overflow-x: auto;
 }
