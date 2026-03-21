@@ -1,61 +1,79 @@
-<div class="app">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainView</title>
 
-  <div class="calculator">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <div class="display">
+<body>
 
-      <input type="text" id="result" readonly />
+<header class="app-header">
+    <div class="logo-container">
+        <div class="logo-icon"></div> 
+        <h1>ChainView</h1>
+    </div>
+    <p class="tagline">Institutional Flow & Smart Money Tracker</p>
+</header>
 
+<main>
+
+    <div id="inputSection" class="card">
+        <label>Wallet Address</label>
+        <input type="text" id="walletAddress" placeholder="0x...">
+
+        <div class="network-container">
+            <label>Select Network</label>
+            <select id="chainSelect">
+                <option value="eth">Ethereum</option>
+                <option value="bsc">BSC</option>
+                <option value="polygon">Polygon</option>
+            </select>
+        </div>
+
+        <button id="checkWallet">Check Wallet</button>
+        <button id="exportCSV">Export CSV</button>
     </div>
 
-    <div class="buttons">
-
-      <button class="operator">C</button>
-
-      <button class="operator">÷</button>
-
-      <button class="operator">×</button>
-
-      <button class="operator">⌫</button>
-
-      <button>7</button>
-
-      <button>8</button>
-
-      <button>9</button>
-
-      <button class="operator">−</button>
-
-      <button>4</button>
-
-      <button>5</button>
-
-      <button>6</button>
-
-      <button class="operator">+</button>
-
-      <button>1</button>
-
-      <button>2</button>
-
-      <button>3</button>
-
-      <button class="equals">=</button>
-
-      <button class="zero">0</button>
-
-      <button>.</button>
-
+    <div id="home" class="tabContent active">
+        <div class="card">
+            <h2>Total Portfolio Value</h2>
+            <p id="totalBalance">$0.00</p>
+        </div>
     </div>
 
-  </div>
-<div class="history">
+    <div id="tokens" class="tabContent">
+        <div class="card">
+            <h2>Tokens</h2>
+            <ul id="tokenList"></ul>
+        </div>
+    </div>
 
-  <div id="toggleHistory">HISTORY</b></h3>
-<button id="clearHistory">CLEAR</button>
+    <div id="nfts" class="tabContent">
+        <div class="card">
+            <h2>NFTs</h2>
+            <div id="nftGallery" class="nftGallery"></div>
+        </div>
+    </div>
 
-  </h3>
-  <ul id="historyList"></ul>
+    <div id="activity" class="tabContent">
+        <div class="card">
+            <h2>Transactions</h2>
+            <ul id="txList"></ul>
+        </div>
+    </div>
 
+</main>
+
+<div class="tabs">
+    <button class="tabButton active" data-tab="home">Home</button>
+    <button class="tabButton" data-tab="tokens">Tokens</button>
+    <button class="tabButton" data-tab="nfts">NFTs</button>
+    <button class="tabButton" data-tab="activity">Activity</button>
 </div>
-  </div>
+
+<script src="app.js"></script>
+</body>
+                                                 </html>
